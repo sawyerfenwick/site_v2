@@ -1,24 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import { Card, CardContent, Avatar, Typography } from '@mui/material';
+import pic from './profile.PNG';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import EmailIcon from '@mui/icons-material/Email';
 
 function App() {
+
+  function clickGithub() {
+    console.log("github");
+  }
+
+  function clickLinkedIn() {
+    console.log("linkedin");
+  }
+
+  function clickEmail() {
+    console.log("email");
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Card>
+      <CardContent>
+        <Avatar src={pic}>
+        </Avatar>
+        <Typography>Sawyer Fenwick</Typography>
+        <GitHubIcon onClick={clickGithub}/>
+        <LinkedInIcon sx={{color: '#0077b5'}} onClick={clickLinkedIn}/>
+        <EmailIcon onClick={clickEmail}/>
+      </CardContent>
+    </Card>
   );
 }
 
